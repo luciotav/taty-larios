@@ -55,13 +55,12 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 - [ ] Persistência de pedidos (KV/D1/planilha) — não implementado; hoje nada é salvo.
 - [ ] Trocar o token de teste pelo de produção no go-live.
 
-## 5. Publicação — GitHub Pages
+## 5. Publicação — GitHub Pages  ✅ NO AR
 
 - Repo: **github.com/luciotav/taty-larios** (público).
-- [ ] No GitHub: Settings → Pages → Source: **GitHub Actions**
-      (o workflow `.github/workflows/deploy.yml` já está pronto).
-- [ ] URL final esperada: `https://luciotav.github.io/taty-larios/`.
-- Caminhos no site são **relativos** (`assets/...`), então funciona em subpasta.
+- Source: **GitHub Actions** (workflow `.github/workflows/deploy.yml`). Cada push em `main` republica.
+- Site: **https://luciotav.github.io/taty-larios/** — verificado (Home + Coleção + catálogo carregando).
+- Caminhos são relativos, então funciona na subpasta `/taty-larios/`.
   `PAGES_ORIGIN` do Worker já aponta para essa URL.
 
 ## 6. Domínio próprio (depois)
