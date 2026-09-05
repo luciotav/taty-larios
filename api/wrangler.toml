@@ -1,0 +1,13 @@
+name = "taty-larios-api"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Origem exata do site (GitHub Pages). Ajustar depois de saber o usuário/repo.
+# Ex.: "https://SEU-USUARIO.github.io"
+[vars]
+ALLOWED_ORIGIN = "https://SEU-USUARIO.github.io"        # TODO
+PAGES_ORIGIN   = "https://SEU-USUARIO.github.io/taty-larios"  # TODO (onde está data/products.json)
+
+# O token é SECRET — não vai aqui. Definir com:
+#   cd api && npx wrangler secret put MP_ACCESS_TOKEN
+# (cole o Access Token de TESTE primeiro; troque pelo de produção no go-live)

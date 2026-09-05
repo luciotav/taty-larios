@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Foto do produto em breve">
+  <rect width="800" height="800" fill="#F3E8D9"/>
+  <rect x="40" y="40" width="720" height="720" fill="none" stroke="#E7DBC7" stroke-width="2"/>
+  <g fill="none" stroke="#B79B72" stroke-width="6" stroke-linecap="round">
+    <path d="M300 330 q100 -90 200 0 v170 a40 40 0 0 1 -40 40 h-120 a40 40 0 0 1 -40 -40 z"/>
+    <path d="M340 330 v-30 a60 60 0 0 1 120 0 v30"/>
+  </g>
+  <text x="400" y="600" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="34" fill="#876F4D">Taty Larios</text>
+  <text x="400" y="644" text-anchor="middle" font-family="Helvetica, 'Jost', sans-serif" font-size="20" fill="#6B6255" letter-spacing="2">FOTO EM BREVE</text>
+</svg>
