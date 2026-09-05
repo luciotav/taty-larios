@@ -2,11 +2,11 @@ name = "taty-larios-api"
 main = "src/index.js"
 compatibility_date = "2025-09-01"
 
-# Origem exata do site (GitHub Pages). Ajustar depois de saber o usuário/repo.
-# Ex.: "https://SEU-USUARIO.github.io"
+# Origem do site publicado no GitHub Pages (repo github.com/luciotav/taty-larios).
+# Trocar para o domínio próprio quando ele existir (ver TODO.md item 6).
 [vars]
-ALLOWED_ORIGIN = "https://SEU-USUARIO.github.io"        # TODO
-PAGES_ORIGIN   = "https://SEU-USUARIO.github.io/taty-larios"  # TODO (onde está data/products.json)
+ALLOWED_ORIGIN = "https://luciotav.github.io"
+PAGES_ORIGIN   = "https://luciotav.github.io/taty-larios"
 
 # O token é SECRET — não vai aqui. Definir com:
 #   cd api && npx wrangler secret put MP_ACCESS_TOKEN

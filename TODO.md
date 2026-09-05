@@ -57,13 +57,12 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 
 ## 5. Publicação — GitHub Pages
 
-- [ ] Definir usuário/organização do GitHub e nome do repo (sugestão: `taty-larios`).
-- [ ] `git remote add origin ...` e `git push -u origin main`.
-- [ ] Settings → Pages → Source: **GitHub Actions** (o workflow `.github/workflows/deploy.yml` já está pronto)
-      ou "Deploy from a branch" → `main` / root.
-- [ ] Conferir a URL final: `https://<usuario>.github.io/<repo>/`.
-- [ ] Se `<repo>` não for `<usuario>.github.io`, o site fica em subpasta — os caminhos
-      já são **relativos** (`assets/...`), então funciona; só ajustar `PAGES_ORIGIN` no Worker.
+- Repo: **github.com/luciotav/taty-larios** (público).
+- [ ] No GitHub: Settings → Pages → Source: **GitHub Actions**
+      (o workflow `.github/workflows/deploy.yml` já está pronto).
+- [ ] URL final esperada: `https://luciotav.github.io/taty-larios/`.
+- Caminhos no site são **relativos** (`assets/...`), então funciona em subpasta.
+  `PAGES_ORIGIN` do Worker já aponta para essa URL.
 
 ## 6. Domínio próprio (depois)
 
