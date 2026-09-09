@@ -7,7 +7,9 @@ compatibility_date = "2025-09-01"
 # PAGES_ORIGIN: base pública de onde o Worker lê data/products.json e para onde manda as back_urls
 # do Checkout Pro. Trocar para https://tatianelarios.com.br quando o DNS do domínio estiver no ar.
 [vars]
-ALLOWED_ORIGIN = "https://tatianelarios.com.br,https://www.tatianelarios.com.br,https://luciotav.github.io"
+# http:// incluído temporariamente enquanto o certificado HTTPS do GitHub Pages não sai.
+# Remover as entradas http:// depois que o Enforce HTTPS estiver ativo.
+ALLOWED_ORIGIN = "https://tatianelarios.com.br,https://www.tatianelarios.com.br,http://tatianelarios.com.br,http://www.tatianelarios.com.br,https://luciotav.github.io"
 PAGES_ORIGIN   = "https://luciotav.github.io/taty-larios"
 
 # O token é SECRET — não vai aqui. Definir com:
