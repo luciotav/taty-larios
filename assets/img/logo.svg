@@ -1,8 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="120" viewBox="0 0 260 120" role="img" aria-label="Taty Larios">
-  <!-- PLACEHOLDER: substituir por assets/img/logo.png (monograma TL dourado + wordmark). Ver TODO.md -->
-  <g fill="none" stroke="#876F4D" stroke-width="2.5">
-    <circle cx="130" cy="40" r="30"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" role="img" aria-label="Taty Larios">
+  <!-- Recriação vetorial simplificada do logo (monograma TL + wordmark + divisória com estrela).
+       Substituir por assets/img/logo.png oficial quando o arquivo estiver disponível. Ver TODO.md. -->
+  <g fill="#876F4D" font-family="'Cormorant Garamond', Didot, 'Bodoni 72', Georgia, 'Times New Roman', serif">
+    <!-- Monograma TL -->
+    <text x="210" y="92" text-anchor="middle" font-size="88" letter-spacing="-6" font-weight="500">TL</text>
+    <!-- Wordmark -->
+    <text x="211" y="150" text-anchor="middle" font-size="30" letter-spacing="10">TATY LARIOS</text>
+    <!-- Divisória com estrela de 4 pontas -->
+    <g transform="translate(211 169)">
+      <rect x="-92" y="-0.6" width="72" height="1.2"/>
+      <rect x="20" y="-0.6" width="72" height="1.2"/>
+      <path d="M0 -7.5 L2.2 -2.2 L7.5 0 L2.2 2.2 L0 7.5 L-2.2 2.2 L-7.5 0 L-2.2 -2.2 Z"/>
+    </g>
   </g>
-  <text x="130" y="50" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="30" fill="#876F4D" letter-spacing="1">TL</text>
-  <text x="130" y="98" text-anchor="middle" font-family="Helvetica, 'Jost', sans-serif" font-size="16" fill="#2E2A24" letter-spacing="6">TATY LARIOS</text>
 </svg>

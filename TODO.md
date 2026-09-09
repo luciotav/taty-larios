@@ -22,7 +22,7 @@ Cada item lista o(s) arquivo(s) onde mexer.
 
 | Arquivo | Onde vai | Situação |
 |---|---|---|
-| `logo.png` (monograma TL + wordmark) | `assets/img/` — hoje usa `logo.svg` provisório | **não recebido como arquivo** (só veio como imagem no chat — salvar em `~/Downloads/logo.png`) |
+| `logo.png` (monograma TL + wordmark) | `assets/img/` — hoje usa `logo.svg` **recriado à mão** (aproximação: TL serifado + wordmark + estrela, na cor gold) | logo real só veio como imagem no chat; salvar o PNG oficial em `~/Downloads/logo.png` pra ter o monograma caligráfico exato |
 | `atena.jpg`, `chefirka.jpg`, `bali.jpg`, `cecilia.jpg`, `arizona.jpg` | `assets/img/products/` | ✅ todas adicionadas (fotos reais, recortadas 1000×1000). **Confirmar** categoria/tamanho/cor que inferi da imagem — hoje: atena=Bolsas de mão/Pequena/Vinho · chefirka=Bolsas de mão/Pequena/Café · bali=Transversais/Média/Caramelo · cecilia=Bolsas de mão/Média/Cru · arizona=Clutches/Pequena/Areia |
 | Confirmar que bali/cecilia/arizona batem com as páginas 3/7/8 do catálogo | — | as imagens vêm de `~/Downloads/{bali,cecilia,arizona}_files/` (páginas salvas do Canva); o Canva pré-carrega páginas vizinhas, então revisar se a bolsa certa foi para o produto certo |
 | Fotos reais do Instagram (6 tiles) | `index.html` seção Instagram | hoje reaproveita fotos de produto |
@@ -35,11 +35,11 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 
 | Item | Onde | Valor atual |
 |---|---|---|
-| Número de WhatsApp | `assets/js/config.js` → `whatsappNumber` | `5500000000000` (fake) |
-| Mensagem padrão WhatsApp | `assets/js/config.js` → `whatsappMessage` | genérica |
+| Número de WhatsApp | `assets/js/config.js` → `whatsappNumber` | ✅ `5511940722489` (11 94072-2489) |
+| Mensagem padrão WhatsApp | `assets/js/config.js` → `whatsappMessage` | genérica — ajustar se quiser |
 | Handle do Instagram | `assets/js/config.js` → `instagramHandle` / `instagramUrl` | `@taty.larios` — **confirmar se existe** |
-| E-mail de contato | `assets/js/config.js` → `contactEmail` | `contato@exemplo.com.br` |
-| Valor do frete grátis | `data/products.json` → `freeShippingThreshold`, `assets/js/config.js`, textos das barras de anúncio nos HTML | `R$ 399,90` |
+| E-mail de contato | `assets/js/config.js` → `contactEmail` | ✅ `taty.lariosta@gmail.com` |
+| Valor do frete grátis | `data/products.json` → `freeShippingThreshold`, `assets/js/config.js`, textos das barras de anúncio nos HTML | `R$ 399,90` — **confirmar** |
 
 ## 4. Pagamento — Mercado Pago (Cloudflare Worker em `api/`)
 
