@@ -43,18 +43,30 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 
 ## 4. Pagamento — Mercado Pago (Cloudflare Worker em `api/`)
 
-- [x] Conta Mercado Pago + aplicação "TatyLariossite" (ID 7217556568175643, conta `tatiane`).
-- [x] Conta Cloudflare + `wrangler login` (luciotav@gmail.com).
+- [x] Conta Cloudflare + `wrangler login` (luciotav@gmail.com). Worker no ar:
+      **https://taty-larios-api.tatylarios-bolsas.workers.dev** (subdomínio workers.dev `tatylarios-bolsas`).
+- [x] App Mercado Pago **"Taty Larios Loja"** (ID 6552344602639545, conta `tatiane` / nick `TATIANELARIOS`).
+      O app antigo "TatyLariossite" foi apagado.
 - [x] `ALLOWED_ORIGIN` / `PAGES_ORIGIN` no `api/wrangler.toml` = `https://luciotav.github.io[/taty-larios]`.
-- [x] `wrangler secret put MP_ACCESS_TOKEN` — **com o Access Token de TESTE**.
-- [x] `wrangler deploy` → Worker no ar: **https://taty-larios-api.tatylarios-bolsas.workers.dev**
-- [x] `checkoutApiUrl` em `assets/js/config.js` apontando para `.../create-preference`.
-- [ ] **PENDENTE: trocar o token de TESTE pelo de PRODUÇÃO antes de vender de verdade**
-      (`cd api && npx wrangler secret put MP_ACCESS_TOKEN` com o `APP_USR-...` de produção; não precisa re-deploy).
-- [ ] Testar o fluxo com cartões de teste do Mercado Pago (aguardando propagação de DNS do subdomínio workers.dev).
+- [x] `checkoutApiUrl` em `assets/js/config.js` → `.../create-preference`.
+- [x] Fluxo verificado ponta a ponta: carrinho → Worker → Checkout Pro abre com Pix/Cartão/Boleto e total correto.
+- [x] Página `carrinho.html` + `carrinho.js` (lista, quantidade, resumo). `checkout-retorno.html` (sucesso/pendente/falha).
+
+- [ ] ⚠️ **TOKEN EM USO É DE PRODUÇÃO** (`APP_USR-...`). As **credenciais de TESTE nunca ativaram**
+      (bug do painel MP nessa conta — erro `DXT40-*` por dias, em 2 apps diferentes). Ou seja:
+      **toda compra no site cobra de verdade.** Enquanto os preços forem placeholder, isso é risco —
+      atualizar os preços reais em `data/products.json` ANTES de divulgar, ou reverter `checkoutApiUrl`
+      para `""` (volta pro fallback WhatsApp) até estar pronto.
+- [ ] 🔒 **ROTACIONAR o Access Token de produção**: foi colado em texto puro no chat durante a config.
+      MP → Credenciais de produção → menu (⋮) do Access Token → *Renovar*. Depois:
+      `cd api && npx wrangler secret put MP_ACCESS_TOKEN` com o novo valor (sem re-deploy).
+- [ ] Nome do vendedor no checkout aparece como **"modelagem"** — ajustar em MP → configurações da conta / "Meu negócio" (nome fantasia).
+- [ ] Retomar o ambiente de **teste** quando o painel MP voltar (ativar credenciais de teste do app novo)
+      e usar o token `TEST-...`/`APP_USR-` de teste para validar sem cobrança real.
 - [ ] Frete: a preference **não** inclui frete (`shipments`). Definir política e implementar.
-- [ ] Webhook (`notification_url`) para status de pagamento — não implementado.
-- [ ] Persistência de pedidos (KV/D1/planilha) — não implementado; hoje nada é salvo.
+- [ ] Webhook (`notification_url`) para status de pagamento — não implementado (`checkout-retorno.html` é só visual).
+- [ ] Persistência de pedidos (KV/D1/planilha) — não implementado; hoje nada é salvo no servidor.
+- [ ] `auto_return`/`back_urls` do Worker apontam para `checkout-retorno.html` — ok, página existe.
 
 ## 5. Publicação — GitHub Pages  ✅ NO AR
 
