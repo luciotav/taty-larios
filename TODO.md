@@ -24,7 +24,8 @@ Cada item lista o(s) arquivo(s) onde mexer.
 |---|---|---|
 | `logo.png` (monograma TL + wordmark) | `assets/img/` — hoje usa `logo.svg` provisório | **não recebido** |
 | `bali.jpg` | `assets/img/products/` | **não recebido** (card usa `_placeholder.svg`) |
-| `atena.jpg`, `chefirka.jpg`, `cecilia.jpg`, `arizona.jpg` | `assets/img/products/` | **não recebidos** |
+| `cecilia.jpg`, `arizona.jpg` | `assets/img/products/` | **não recebidos** (cards usam `_placeholder.svg`) |
+| `atena.jpg`, `chefirka.jpg` | `assets/img/products/` | ✅ adicionadas (fotos reais). **Confirmar** categoria/tamanho/cor que inferi da imagem: atena = Bolsas de mão / Pequena / Vinho; chefirka = Bolsas de mão / Pequena / Café |
 | Fotos reais do Instagram (6 tiles) | `index.html` seção Instagram | hoje reaproveita fotos de produto |
 | Imagem da seção "Nossa história" | `index.html` `.story__media` | hoje usa `motivos_florais.jpg` |
 

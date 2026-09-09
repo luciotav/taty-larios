@@ -63,30 +63,30 @@
     {
       "id": "atena",
       "name": "Bolsa Atena",
-      "category": "Transversais",
-      "size": "Média",
-      "color": "Terracota",
+      "category": "Bolsas de mão",
+      "size": "Pequena",
+      "color": "Vinho",
       "price": 399.90,
       "compareAt": null,
       "badge": "NOVO",
-      "image": "assets/img/products/_placeholder.svg",
+      "image": "assets/img/products/atena.jpg",
       "featured": false,
       "inStock": true,
-      "description": "PLACEHOLDER — descrição da peça. FOTO PENDENTE (atena.jpg)."
+      "description": "PLACEHOLDER — descrição da peça. Crochê ponto trançado, alça de mão e alça de corrente removível. (Foto real; categoria/tamanho/cor inferidos da imagem — confirmar.)"
     },
     {
       "id": "chefirka",
       "name": "Bolsa Chefirka",
       "category": "Bolsas de mão",
-      "size": "Média",
-      "color": "Off-white",
+      "size": "Pequena",
+      "color": "Café",
       "price": 439.90,
       "compareAt": null,
       "badge": null,
-      "image": "assets/img/products/_placeholder.svg",
+      "image": "assets/img/products/chefirka.jpg",
       "featured": false,
       "inStock": true,
-      "description": "PLACEHOLDER — descrição da peça. FOTO PENDENTE (chefirka.jpg)."
+      "description": "PLACEHOLDER — descrição da peça. Crochê fechado com fecho metálico dourado, alça de mão e transversal. (Foto real; categoria/tamanho/cor inferidos da imagem — confirmar.)"
     },
     {
       "id": "cecilia",
