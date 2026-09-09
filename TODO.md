@@ -22,10 +22,9 @@ Cada item lista o(s) arquivo(s) onde mexer.
 
 | Arquivo | Onde vai | Situação |
 |---|---|---|
-| `logo.png` (monograma TL + wordmark) | `assets/img/` — hoje usa `logo.svg` provisório | **não recebido** |
-| `bali.jpg` | `assets/img/products/` | **não recebido** (card usa `_placeholder.svg`) |
-| `cecilia.jpg`, `arizona.jpg` | `assets/img/products/` | **não recebidos** (cards usam `_placeholder.svg`) |
-| `atena.jpg`, `chefirka.jpg` | `assets/img/products/` | ✅ adicionadas (fotos reais). **Confirmar** categoria/tamanho/cor que inferi da imagem: atena = Bolsas de mão / Pequena / Vinho; chefirka = Bolsas de mão / Pequena / Café |
+| `logo.png` (monograma TL + wordmark) | `assets/img/` — hoje usa `logo.svg` provisório | **não recebido como arquivo** (só veio como imagem no chat — salvar em `~/Downloads/logo.png`) |
+| `atena.jpg`, `chefirka.jpg`, `bali.jpg`, `cecilia.jpg`, `arizona.jpg` | `assets/img/products/` | ✅ todas adicionadas (fotos reais, recortadas 1000×1000). **Confirmar** categoria/tamanho/cor que inferi da imagem — hoje: atena=Bolsas de mão/Pequena/Vinho · chefirka=Bolsas de mão/Pequena/Café · bali=Transversais/Média/Caramelo · cecilia=Bolsas de mão/Média/Cru · arizona=Clutches/Pequena/Areia |
+| Confirmar que bali/cecilia/arizona batem com as páginas 3/7/8 do catálogo | — | as imagens vêm de `~/Downloads/{bali,cecilia,arizona}_files/` (páginas salvas do Canva); o Canva pré-carrega páginas vizinhas, então revisar se a bolsa certa foi para o produto certo |
 | Fotos reais do Instagram (6 tiles) | `index.html` seção Instagram | hoje reaproveita fotos de produto |
 | Imagem da seção "Nossa história" | `index.html` `.story__media` | hoje usa `motivos_florais.jpg` |
 

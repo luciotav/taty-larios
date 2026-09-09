@@ -35,16 +35,16 @@
     {
       "id": "bali",
       "name": "Bolsa Bali",
-      "category": "Bolsas de mão",
-      "size": "Grande",
+      "category": "Transversais",
+      "size": "Média",
       "color": "Caramelo",
       "price": 459.90,
       "compareAt": null,
       "badge": null,
-      "image": "assets/img/products/_placeholder.svg",
+      "image": "assets/img/products/bali.jpg",
       "featured": true,
       "inStock": true,
-      "description": "PLACEHOLDER — descrição da peça. FOTO PENDENTE (bali.jpg)."
+      "description": "PLACEHOLDER — descrição da peça. Pouch de crochê com alça de corrente dourada; disponível em várias cores. (Foto real; categoria/tamanho/cor a confirmar.)"
     },
     {
       "id": "bag-moude",
@@ -91,30 +91,30 @@
     {
       "id": "cecilia",
       "name": "Bolsa Cecília",
-      "category": "Transversais",
-      "size": "Pequena",
-      "color": "Caramelo",
+      "category": "Bolsas de mão",
+      "size": "Média",
+      "color": "Cru",
       "price": 349.90,
       "compareAt": 411.90,
       "badge": "15% OFF",
-      "image": "assets/img/products/_placeholder.svg",
+      "image": "assets/img/products/cecilia.jpg",
       "featured": false,
       "inStock": true,
-      "description": "PLACEHOLDER — descrição da peça. FOTO PENDENTE (cecilia.jpg)."
+      "description": "PLACEHOLDER — descrição da peça. Bolsa de crochê com alças de argola e contas de madeira. (Foto real; categoria/tamanho/cor a confirmar.)"
     },
     {
       "id": "arizona",
       "name": "Bolsa Arizona",
-      "category": "Bolsas de mão",
-      "size": "Grande",
-      "color": "Terracota",
+      "category": "Clutches",
+      "size": "Pequena",
+      "color": "Areia",
       "price": 489.90,
       "compareAt": null,
       "badge": null,
-      "image": "assets/img/products/_placeholder.svg",
+      "image": "assets/img/products/arizona.jpg",
       "featured": false,
       "inStock": true,
-      "description": "PLACEHOLDER — descrição da peça. FOTO PENDENTE (arizona.jpg)."
+      "description": "PLACEHOLDER — descrição da peça. Clutch de crochê com moldura de madeira. (Foto real; categoria/tamanho/cor a confirmar.)"
     }
   ]
 }
