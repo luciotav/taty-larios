@@ -76,7 +76,17 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 - Caminhos são relativos, então funciona na subpasta `/taty-larios/`.
   `PAGES_ORIGIN` do Worker já aponta para essa URL.
 
-## 6. Domínio próprio (depois)
+## 6. Domínio próprio — tatianelarios.com.br (EM ANDAMENTO)
+
+- [x] Domínio registrado no registro.br (titular Lucio Mauro Tavares). DNS do registro.br.
+- [x] Zona DNS: 4× A no apex (185.199.108–111.153) + CNAME `www` → `luciotav.github.io`. Propagado.
+- [x] `CNAME` na raiz do repo = `tatianelarios.com.br`. GitHub Pages → Custom domain salvo; `.github.io` já redireciona.
+- [x] Worker `ALLOWED_ORIGIN` = lista com o domínio + www + github.io.
+- [ ] **HTTPS**: certificado do GitHub ainda provisionando (só http funciona). Quando `https://tatianelarios.com.br` abrir:
+      trocar `PAGES_ORIGIN` do Worker para `https://tatianelarios.com.br` + `wrangler deploy`, e marcar **Enforce HTTPS** no GitHub.
+- [ ] Depois que estabilizar: remover `https://luciotav.github.io` da lista `ALLOWED_ORIGIN`.
+
+## 6b. Domínio próprio — notas antigas
 
 - [ ] Registrar `tatylarios.com.br` (ou equivalente).
 - [ ] Criar arquivo `CNAME` na raiz com o domínio.
