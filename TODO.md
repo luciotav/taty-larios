@@ -51,12 +51,12 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 - [x] `checkoutApiUrl` em `assets/js/config.js` → `.../create-preference`.
 - [x] Fluxo verificado ponta a ponta: carrinho → Worker → Checkout Pro abre com Pix/Cartão/Boleto e total correto.
 - [x] Página `carrinho.html` + `carrinho.js` (lista, quantidade, resumo). `checkout-retorno.html` (sucesso/pendente/falha).
+- [x] **CHECKOUT ONLINE LIGADO** (`checkoutApiUrl` aponta pro Worker). Testado com preços de campanha:
+      carrinho de 2 itens → Checkout Pro mostrou R$ 808,00 correto. **Pagamento real ativo.**
 
-- [ ] ⚠️ **TOKEN EM USO É DE PRODUÇÃO** (`APP_USR-...`). As **credenciais de TESTE nunca ativaram**
-      (bug do painel MP nessa conta — erro `DXT40-*` por dias, em 2 apps diferentes). Ou seja:
-      **toda compra no site cobra de verdade.** Enquanto os preços forem placeholder, isso é risco —
-      atualizar os preços reais em `data/products.json` ANTES de divulgar, ou reverter `checkoutApiUrl`
-      para `""` (volta pro fallback WhatsApp) até estar pronto.
+- [ ] ⚠️ **TOKEN EM USO É DE PRODUÇÃO** (`APP_USR-...`). As credenciais de TESTE nunca ativaram
+      (bug do painel MP nessa conta — erro `DXT40-*` por dias, em 2 apps). Retomar o ambiente de teste
+      quando o painel voltar, pra validar sem cobrança real.
 - [ ] 🔒 **ROTACIONAR o Access Token de produção**: foi colado em texto puro no chat durante a config.
       MP → Credenciais de produção → menu (⋮) do Access Token → *Renovar*. Depois:
       `cd api && npx wrangler secret put MP_ACCESS_TOKEN` com o novo valor (sem re-deploy).
