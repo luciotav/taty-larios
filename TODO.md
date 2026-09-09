@@ -43,17 +43,18 @@ nos 3 HTML (`index.html`, `colecao.html`, `checkout-retorno.html`) e no `favicon
 
 ## 4. Pagamento — Mercado Pago (Cloudflare Worker em `api/`)
 
-- [ ] Criar conta Mercado Pago + aplicação → obter Access Token de **teste** e **produção**.
-- [ ] Criar conta Cloudflare e `npx wrangler login`.
-- [ ] Em `api/wrangler.toml`: preencher `ALLOWED_ORIGIN` e `PAGES_ORIGIN` com a URL real do GitHub Pages.
-- [ ] `cd api && npx wrangler secret put MP_ACCESS_TOKEN` (teste primeiro).
-- [ ] `npx wrangler deploy` → copiar a URL do Worker.
-- [ ] Colar `https://<worker>/create-preference` em `assets/js/config.js` → `checkoutApiUrl`.
-- [ ] Enquanto `checkoutApiUrl` estiver vazio, o botão de compra cai no **fallback de pedido via WhatsApp** (funcional, mas sem pagamento online).
-- [ ] Frete: hoje a preference **não** inclui frete (`shipments`). Definir política e implementar.
+- [x] Conta Mercado Pago + aplicação "TatyLariossite" (ID 7217556568175643, conta `tatiane`).
+- [x] Conta Cloudflare + `wrangler login` (luciotav@gmail.com).
+- [x] `ALLOWED_ORIGIN` / `PAGES_ORIGIN` no `api/wrangler.toml` = `https://luciotav.github.io[/taty-larios]`.
+- [x] `wrangler secret put MP_ACCESS_TOKEN` — **com o Access Token de TESTE**.
+- [x] `wrangler deploy` → Worker no ar: **https://taty-larios-api.tatylarios-bolsas.workers.dev**
+- [x] `checkoutApiUrl` em `assets/js/config.js` apontando para `.../create-preference`.
+- [ ] **PENDENTE: trocar o token de TESTE pelo de PRODUÇÃO antes de vender de verdade**
+      (`cd api && npx wrangler secret put MP_ACCESS_TOKEN` com o `APP_USR-...` de produção; não precisa re-deploy).
+- [ ] Testar o fluxo com cartões de teste do Mercado Pago (aguardando propagação de DNS do subdomínio workers.dev).
+- [ ] Frete: a preference **não** inclui frete (`shipments`). Definir política e implementar.
 - [ ] Webhook (`notification_url`) para status de pagamento — não implementado.
 - [ ] Persistência de pedidos (KV/D1/planilha) — não implementado; hoje nada é salvo.
-- [ ] Trocar o token de teste pelo de produção no go-live.
 
 ## 5. Publicação — GitHub Pages  ✅ NO AR
 

@@ -4,42 +4,71 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Retorno do pagamento — Taty Larios</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="icon" href="assets/img/logo.svg">
+  <style>
+    .retorno { max-width: 520px; margin: 0 auto; padding: 72px var(--gutter) 96px; text-align: center; }
+    .retorno__logo img { height: 60px; width: auto; margin: 0 auto 32px; }
+    .retorno__icon {
+      width: 64px; height: 64px; border-radius: 999px; margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line);
+    }
+    .retorno__icon svg { width: 30px; height: 30px; }
+    .retorno--ok .retorno__icon { color: var(--gold); }
+    .retorno--pend .retorno__icon { color: var(--gold-light); }
+    .retorno--fail .retorno__icon { color: var(--sale); }
+    .retorno p { color: var(--ink-soft); }
+    .retorno .btn { margin-top: 20px; }
+  </style>
 </head>
 <body>
-<header class="header">
-  <div class="header__bar wrap">
-    <span class="header__burger" aria-hidden="true"></span>
-    <a class="header__logo" href="index.html" style="grid-column:2"><img src="assets/img/logo.svg" alt="Taty Larios"></a>
-    <span class="header__cart" aria-hidden="true"></span>
-  </div>
-</header>
+  <main class="retorno" data-retorno>
+    <div class="retorno__logo"><img src="assets/img/logo.svg" alt="Taty Larios"></div>
+    <div class="retorno__icon" data-icon></div>
+    <h1 data-title>Processando…</h1>
+    <p data-msg></p>
+    <a class="btn" href="index.html">Voltar à loja</a>
+    <p style="margin-top:28px"><a href="#" data-wa style="color:var(--gold);text-decoration:underline;font-size:.9rem">Falar no WhatsApp</a></p>
+  </main>
 
-<main class="wrap" style="min-height:52vh;display:flex;align-items:center;justify-content:center;text-align:center">
-  <div style="max-width:520px;padding:64px 0">
-    <p class="eyebrow" data-eyebrow>Pagamento</p>
-    <h1 data-title>Obrigada!</h1>
-    <p data-message style="color:var(--ink-soft)">Estamos confirmando o status do seu pedido.</p>
-    <p style="margin-top:28px"><a class="btn" href="index.html">Voltar à loja</a></p>
-  </div>
-</main>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      var status = new URLSearchParams(location.search).get("status") || "";
+      var root = document.querySelector("[data-retorno]");
+      var icon = document.querySelector("[data-icon]");
+      var title = document.querySelector("[data-title]");
+      var msg = document.querySelector("[data-msg]");
 
-<script src="assets/js/config.js"></script>
-<script src="assets/js/store.js"></script>
-<script>
-  // TODO: confirmar status real via webhook/consulta. Aqui só lê o querystring.
-  var status = new URLSearchParams(location.search).get("status") || "";
-  var map = {
-    sucesso:  ["Pedido recebido", "Pagamento aprovado ou em processamento. Você receberá a confirmação por e-mail e WhatsApp.", true],
-    pendente: ["Pagamento pendente", "Assim que o pagamento for compensado (boleto/Pix), começamos a preparar sua bolsa.", false],
-    falha:    ["Não foi dessa vez", "O pagamento não foi concluído. Você pode tentar novamente ou falar com a gente no WhatsApp.", false],
-  };
-  var m = map[status] || ["Obrigada!", "Estamos confirmando o status do seu pedido.", false];
-  document.querySelector("[data-title]").textContent = m[0];
-  document.querySelector("[data-message]").textContent = m[1];
-  if (m[2] && window.TLStore) TLStore.clearCart();
-</script>
+      var check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>';
+      var clock = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>';
+      var cross = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+
+      if (status === "sucesso") {
+        root.classList.add("retorno--ok");
+        icon.innerHTML = check;
+        title.textContent = "Pedido confirmado!";
+        msg.textContent = "Recebemos seu pagamento. Você vai receber os detalhes por e-mail e, em breve, o código de rastreio. Obrigada por comprar com a gente.";
+        try { window.TLStore && TLStore.clearCart(); } catch (e) {}
+      } else if (status === "pendente") {
+        root.classList.add("retorno--pend");
+        icon.innerHTML = clock;
+        title.textContent = "Pagamento em análise";
+        msg.textContent = "Seu pagamento está sendo processado (comum em boleto e alguns cartões). Assim que for aprovado, avisamos por e-mail e separamos sua peça.";
+      } else {
+        root.classList.add("retorno--fail");
+        icon.innerHTML = cross;
+        title.textContent = "Pagamento não concluído";
+        msg.textContent = "O pagamento não foi finalizado. Nada foi cobrado. Você pode tentar de novo pelo carrinho ou falar com a gente no WhatsApp.";
+      }
+    })();
+  </script>
 </body>
 </html>
