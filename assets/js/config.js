@@ -15,11 +15,13 @@ window.TL_CONFIG = {
   contactEmail: "contato@exemplo.com.br", // PLACEHOLDER
 
   // Endpoint do Cloudflare Worker que cria a preference do Mercado Pago.
-  // Worker: ~/taty-larios/api  (deploy: cd api && npx wrangler deploy)
-  // ATENÇÃO: hoje está com o Access Token de TESTE. Trocar pelo de produção
-  // (npx wrangler secret put MP_ACCESS_TOKEN com APP_USR-...) antes de vender de verdade.
-  // Se ficar vazio, o botão de compra cai no fallback de pedido via WhatsApp.
-  checkoutApiUrl: "https://taty-larios-api.tatylarios-bolsas.workers.dev/create-preference",
+  // Worker (FUNCIONANDO, testado): https://taty-larios-api.tatylarios-bolsas.workers.dev/create-preference
+  //
+  // DESLIGADO DE PROPÓSITO enquanto os preços em data/products.json forem placeholder,
+  // porque o Worker está com o Access Token de PRODUÇÃO (cobra de verdade).
+  // Para RELIGAR o checkout online: colar a URL acima aqui e dar push. É só isso.
+  // Com string vazia, o botão "Finalizar compra" abre um pedido pré-preenchido no WhatsApp.
+  checkoutApiUrl: "",
 
   // Frete grátis (também vem do products.json; aqui só para textos da UI)
   freeShippingThreshold: 399.90, // PLACEHOLDER
