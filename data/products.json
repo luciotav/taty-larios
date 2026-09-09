@@ -2,7 +2,7 @@
   "_comment": "FONTE DE VERDADE DO CATÁLOGO. Preços em campanha de 30% OFF: 'price' é o valor com desconto, 'compareAt' é o valor cheio (price / 0.70). Nomes e descrições ainda são PLACEHOLDER — ver TODO.md. O Worker (api/) revalida preços contra este arquivo; nunca confie no preço vindo do navegador.",
   "currency": "BRL",
   "installmentsMax": 6,
-  "freeShippingThreshold": 399.90,
+  "freeShippingThreshold": 399.00,
   "products": [
     {
       "id": "cosmopolitan",

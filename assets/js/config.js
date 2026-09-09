@@ -1,9 +1,8 @@
 /* =========================================================
-   Configuração central. Ainda placeholder: instagramHandle (confirmar),
-   freeShippingThreshold. Ver TODO.md.
+   Configuração central da marca. Ver TODO.md para o que ainda falta.
    ========================================================= */
 window.TL_CONFIG = {
-  // Instagram — CONFIRMAR handle real da marca
+  // Instagram (confirmado)
   instagramHandle: "taty.larios",
   instagramUrl: "https://instagram.com/taty.larios",
 
@@ -22,5 +21,5 @@ window.TL_CONFIG = {
   checkoutApiUrl: "https://taty-larios-api.tatylarios-bolsas.workers.dev/create-preference",
 
   // Frete grátis (também vem do products.json; aqui só para textos da UI)
-  freeShippingThreshold: 399.90, // PLACEHOLDER
+  freeShippingThreshold: 399.00,
 };

@@ -110,8 +110,16 @@ export default {
 };
 
 function buildCors(allowed, origin) {
-  // Se ALLOWED_ORIGIN não estiver setado, ecoa a origem (útil em dev). Em produção, setar.
-  const allow = allowed && allowed !== "*" ? allowed : origin || "*";
+  // ALLOWED_ORIGIN pode ser uma lista separada por vírgula (site no github.io + domínio próprio).
+  // Ecoa de volta a origem do request se ela estiver na lista; senão, a primeira da lista.
+  const list = (allowed || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  let allow;
+  if (!list.length || list.includes("*")) allow = origin || "*";
+  else if (origin && list.includes(origin)) allow = origin;
+  else allow = list[0];
   return {
     "Access-Control-Allow-Origin": allow,
     "Access-Control-Allow-Methods": "POST, OPTIONS",

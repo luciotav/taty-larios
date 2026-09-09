@@ -2,12 +2,13 @@ name = "taty-larios-api"
 main = "src/index.js"
 compatibility_date = "2025-09-01"
 
-# Origem do site publicado no GitHub Pages (repo github.com/luciotav/taty-larios).
-# Trocar para o domínio próprio quando ele existir (ver TODO.md item 6).
+# Origens permitidas (CORS). Lista separada por vírgula: domínio próprio + www + o github.io
+# (mantido durante a migração de DNS; pode remover o github.io depois que o domínio estabilizar).
+# PAGES_ORIGIN: base pública de onde o Worker lê data/products.json e para onde manda as back_urls
+# do Checkout Pro. Trocar para https://tatianelarios.com.br quando o DNS do domínio estiver no ar.
 [vars]
-ALLOWED_ORIGIN = "https://luciotav.github.io"
+ALLOWED_ORIGIN = "https://tatianelarios.com.br,https://www.tatianelarios.com.br,https://luciotav.github.io"
 PAGES_ORIGIN   = "https://luciotav.github.io/taty-larios"
 
 # O token é SECRET — não vai aqui. Definir com:
 #   cd api && npx wrangler secret put MP_ACCESS_TOKEN
-# (cole o Access Token de TESTE primeiro; troque pelo de produção no go-live)
