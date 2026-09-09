@@ -8,8 +8,8 @@ Cada item lista o(s) arquivo(s) onde mexer.
 | Item | Onde | Situação |
 |---|---|---|
 | Nomes finais dos produtos | `data/products.json` (`name`) | exemplos: Cosmopolitan, Motivos Florais, Bali, Bag Moude, Atena, Chefirka, Cecília, Arizona |
-| Preços reais | `data/products.json` (`price`, `compareAt`) | todos fictícios |
-| Selos (`NOVO`, `15% OFF`) | `data/products.json` (`badge`) | definir quais peças têm desconto/são novidade |
+| Preços | `data/products.json` (`price`, `compareAt`) | **campanha 30% OFF** definida a pedido: venda de R$ 329 a R$ 479 (teto), `compareAt` = price / 0,70. A escala entre as peças foi escolha minha — ajustar se tiver tabela real. |
+| Selos | `data/products.json` (`badge`) | todas com **"30% OFF"** (Atena e Motivos Florais perderam o "NOVO" — readicionar depois se quiser um selo combinado) |
 | Categorias / Tamanho / Cor | `data/products.json` | valores de exemplo — alimentam os filtros da Coleção |
 | Descrições dos produtos | `data/products.json` (`description`) | todas começam com "PLACEHOLDER" |
 | Texto da história da marca | `index.html` seção `#historia` | 2 parágrafos genéricos |
